@@ -8,8 +8,8 @@ import {AnimalNewComponent} from './animal-new.component';
 
 
 @NgModule({
-  imports: [BrowserModule],
-  declarations: [ AppComponent ],
+  imports: [BrowserModule, FormsModule],
+  declarations: [ AppComponent, AnimalNewComponent, AnimalEditComponent, AnimalListComponent ],
   bootstrap:    [ AppComponent ]
 })
 
