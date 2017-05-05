@@ -12,3 +12,14 @@
   background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
   margin: auto;
 }
+p:hover, h2:hover, h3:hover, h4:hover, h5 {
+  font-size: 2em;
+  font-weight: bold;
+}
+img:hover{
+  width: 150%;
+
+}
+.well {
+  padding: 0;
+}
