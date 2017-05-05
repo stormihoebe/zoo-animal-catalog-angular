@@ -29,6 +29,14 @@ import  {Animal} from './animal.model';
           </select>
         </div>
         <div class="form-group">
+          <label>Sex:</label>
+          <select ng-model="data.childSelectedAnimal.sex" [(ngModel)]="childSelectedAnimal.sex"  class="form-control">
+            <option value="M">Male</option>
+            <option value="F" >Female</option>
+            <option value="N/A" >N/A</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label>Diet:</label>
           <select ng-model="data.childSelectedAnimal.diet" [(ngModel)]="childSelectedAnimal.diet"  class="form-control">
             <option value="Carnivore">Carnivore</option>
@@ -37,7 +45,39 @@ import  {Animal} from './animal.model';
             <option value="Other" >Other</option>
           </select>
         </div>
+        <div class="form-group">
+          <label>Location:</label>
+          <select ng-model="data.childSelectedAnimal.location" [(ngModel)]="childSelectedAnimal.location"  class="form-control">
+            <option value="Zone 1">Zone 1</option>
+            <option value="Zone 2" >Zone 2</option>
+            <option value="Zone 3" >Zone 3</option>
+            <option value="Zone 4" >Zone 4</option>
+            <option value="Zone 5" >Zone 5</option>
+            <option value="Other" >Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Number of Caretakers:</label>
+          <input [(ngModel)]="childSelectedAnimal.caretakers" class="form-control" type="number">
+        </div>
+        <div class="form-group">
+          <label>Likes:</label>
+          <input [(ngModel)]="childSelectedAnimal.likes" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Dislikes:</label>
+          <input [(ngModel)]="childSelectedAnimal.dislikes" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Image URL:</label>
+          <input [(ngModel)]="childSelectedAnimal.imageUrl" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>(F or accessability standards)Image Description:</label>
+          <input [(ngModel)]="childSelectedAnimal.imageAlt" class="form-control">
+        </div>
         <button (click)="doneButtonClicked()" class="btn btn-default">Submit Changes</button>
+        <button (click)="doneButtonClicked()" class="btn btn-default">Cancel</button>
       </div>
     </div>
   `
