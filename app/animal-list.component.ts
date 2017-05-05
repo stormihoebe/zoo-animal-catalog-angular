@@ -20,10 +20,10 @@ import  {Animal} from './animal.model';
     <select (change)="onChangeAge($event.target.value)" class="form-control">
         <option value="All" selected="selected">Search By Age</option>
         <option value="All">All</option>
-        <option class="opt" value="Young">Young</option>
-        <option class="opt" value="Mature" >Mature</option>
-        <option class="opt" value="Senior" >Senior</option>
-        <option class="opt" value="Unknown">Unknown</option>
+        <option value="Young">Young</option>
+        <option value="Mature" >Mature</option>
+        <option value="Senior" >Senior</option>
+        <option value="Unknown">Unknown</option>
     </select>
   </div>
 
