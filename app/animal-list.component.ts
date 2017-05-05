@@ -3,7 +3,7 @@ import  {Animal} from './animal.model';
 
 @Component({
   selector: 'animal-list',
-  template: ` <h1>Animal List Here</h1>
+  template: `
   <div class="container">
     <div class="row">
       <div class="col-md-2">
@@ -28,7 +28,7 @@ import  {Animal} from './animal.model';
 
       </div>
     </div>
-    <div class="row" *ngFor="let currentAnimal of childAnimalList">
+    <div class="row well" *ngFor="let currentAnimal of childAnimalList">
       <div class="col-md-2">
         <img src={{currentAnimal.imageUrl}} alt={{currentAnimal.imageAlt}} width="100%">
       </div>
@@ -52,8 +52,9 @@ import  {Animal} from './animal.model';
         <p><strong>Dislikes: </strong> {{currentAnimal.dislikes}}<p>
       </div>
       <div class="col-md-1">
-        <button name="button" class="btn btn-primary">Edit</button>
+        <button name="button" class="btn btn-default" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button>
       </div>
+
     </div>
   </div>
   `
@@ -65,4 +66,8 @@ import  {Animal} from './animal.model';
 export class AnimalListComponent{
 @Input()childAnimalList: Animal[];
 @Output()clickSender = new EventEmitter();
+editButtonHasBeenClicked(animalToEdit: Animal) {
+  console.log("I was clicked")
+  this.clickSender.emit(animalToEdit);
+}
 }
