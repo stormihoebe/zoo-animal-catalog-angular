@@ -1,0 +1,21 @@
+{
+  "name": "zoo-animal-catalog",
+  "description": "simple app for helping a zoo track their animals, focus on designing for visually impared people",
+  "main": "",
+  "authors": [
+    "Stormi Hoebelheinrich"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
