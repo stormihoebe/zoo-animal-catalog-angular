@@ -1,14 +1,14 @@
-#editAnimalForm,{
+#editAnimalForm, #newAnimalForm{
   color: white;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 50px; /* Location of the box */
-  left: 15%;
-  top: 15%;
-  height: 70%;
-  width: 70%;
+  padding: 50px; /* Location of the box */
+  left: 5%;
+  top: 5%;
+  height: 90%;
+  width: 90%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
   margin: auto;
 }
