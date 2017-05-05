@@ -73,10 +73,10 @@ import  {Animal} from './animal.model';
           <input [(ngModel)]="childSelectedAnimal.imageUrl" class="form-control">
         </div>
         <div class="form-group">
-          <label>(F or accessability standards)Image Description:</label>
+          <label>Image Description: </label><span class="pull-right">(For accessability standards)</span>
           <input [(ngModel)]="childSelectedAnimal.imageAlt" class="form-control">
         </div>
-        <button (click)="doneButtonClicked()" class="btn btn-default">Submit Changes</button>
+        <button (click)="doneButtonClicked()" class="btn btn-default pull-right">Submit Changes</button>
         <button (click)="doneButtonClicked()" class="btn btn-default">Cancel</button>
       </div>
     </div>

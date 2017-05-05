@@ -8,7 +8,7 @@ import { Animal } from './animal.model'
   <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
   <animal-edit [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></animal-edit>
 
-  <animal-new></animal-new>
+  <animal-new (newAnimalSender)="addAnimal($event)"></animal-new>
   `
 })
 
@@ -25,5 +25,8 @@ export class AppComponent {
   }
   editAnimal(clickedAnimal: Animal){
     this.selectedAnimal = clickedAnimal;
+  }
+  addAnimal(newAnimalFromChild: Animal){
+    this.masterAnimalList.push(newAnimalFromChild);
   }
 }
