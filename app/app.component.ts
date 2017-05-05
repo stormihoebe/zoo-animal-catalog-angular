@@ -6,7 +6,8 @@ import { Animal } from './animal.model'
   template: `
   <h1>Zoo Animal Catalog</h1>
   <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
-  <animal-edit></animal-edit>
+  <animal-edit [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></animal-edit>
+
   <animal-new></animal-new>
   `
 })
@@ -19,6 +20,9 @@ export class AppComponent {
     new Animal("Flamingo", "Arnie", "02/06/1984", "Senior", "Omnivore", "Zone 1", 3, "M", "Standing in water", "Being disturbed", "https://image.ibb.co/nme2gQ/flamingo.png", "square icon with flamingo cut-out"),
   ];
   selectedAnimal = null;
+  finishedEditing() {
+    this.selectedAnimal = null;
+  }
   editAnimal(clickedAnimal: Animal){
     this.selectedAnimal = clickedAnimal;
   }
