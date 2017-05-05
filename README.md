@@ -9,7 +9,7 @@ Zoo Animal Catalog allows zoo keepers to manage their animal collection. Animals
 ### Planning
 
 1. Models
-  * Animal (species, name, dob, age-characteristic, diet, location, caretakers, sex, likes, dislikes, image-icon)
+  * Animal (species, name, dob, age-characteristic, diet, location, caretakers, sex, likes, dislikes, imageUrl, imageAlt)
 2. Child Components
   * animal-list
   * animal-edit
