@@ -48,7 +48,7 @@ import  {Animal} from './animal.model';
       </div>
     </div>
     <div *ngIf="filterByExhibitOption">
-      <div class="row well" *ngFor="let currentAnimal of childAnimalList">
+      <div class="row well" *ngFor="let currentAnimal of childAnimalList |exhibit:filterByExhibitOption">
         <div class="col-md-2">
           <img src={{currentAnimal.imageUrl}} alt={{currentAnimal.imageAlt}} width="100%">
         </div>
@@ -73,7 +73,34 @@ import  {Animal} from './animal.model';
           <button name="button" class="btn btn-default pull-right" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button>
         </div>
       </div>
+    </div>
+    <div *ngIf="filterByAgeOption">
+      <div class="row well" *ngFor="let currentAnimal of childAnimalList |age:filterByAgeOption">
+        <div class="col-md-2">
+          <img src={{currentAnimal.imageUrl}} alt={{currentAnimal.imageAlt}} width="100%">
+        </div>
+        <div class="col-md-2">
+          <h4>{{currentAnimal.species}}</h4>
+        </div>
+        <div class="col-md-2">
+          <h4>{{currentAnimal.name}}</h4>
+        </div>
+        <div class="col-md-2">
+          <h4>{{currentAnimal.location}}</h4>
+        </div>
+        <div class="col-md-2">
+          <p><strong>DOB:</strong> {{currentAnimal.dob}} ({{currentAnimal.ageCaracteristic}})<p>
+          <p><strong>Sex:</strong> {{currentAnimal.sex}}<p>
+          <p><strong>Diet:</strong> {{currentAnimal.diet}}<p>
+          <p><strong>Caretakers:</strong> {{currentAnimal.caretakers}}<p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Likes:</strong> {{currentAnimal.likes}}<p>
+          <p><strong>Dislikes: </strong> {{currentAnimal.dislikes}}<p>
+          <button name="button" class="btn btn-default pull-right" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button>
+        </div>
       </div>
+    </div>
   </div>
   `
 
