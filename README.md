@@ -6,14 +6,14 @@ A web application that helps a zoo keep track of their animals. Design focus was
 Zoo Animal Catalog allows zoo keepers to manage their animal collection. Animals are logged into the system with various details including: species, name, date of birth, age-characteristic, diet, location, number of caretakers, sex, likes, dislikes, and image-icons. Zoo keepers can add new animals to the system as well as update information about existing animals. The application also allows users to either see a list of all animals or sort by certain specifications, such as location or age-characteristic. To make this application more accessible to the visually impaired, attention was given to text size and font, color contrast, required alternative text for images, and avoidance of using images as primary tools for navigation and discovery.  
 
 
-## Planning
+### Planning
 
 1. Models
   * Animal (species, name, dob, age-characteristic, diet, location, caretakers, sex, likes, dislikes, image-icon)
 2. Child Components
-  * list-animal
-  * edit-animal
-  * new-animal
+  * animal-list
+  * animal-edit
+  * animal-new
 3. Pipes
   * location.pipe
   * age.pipe
