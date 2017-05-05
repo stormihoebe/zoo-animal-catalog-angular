@@ -9,17 +9,23 @@
   width: 90%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.85); /* Black w/ opacity */
   margin: auto;
 }
 p:hover, h2:hover, h3:hover, h4:hover, h5 {
   font-size: 2em;
   font-weight: bold;
 }
-img:hover{
-  width: 150%;
 
-}
 .well {
   padding: 0;
+}
+.zoomin img {
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease;
+}
+.zoomin img:hover {
+  width: 150%;
 }
