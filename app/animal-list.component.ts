@@ -53,6 +53,7 @@ import  {Animal} from './animal.model';
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li (click)="addNewButtonHasBeenClicked(true)">Add New Animal</li>
           <li><a href="https://github.com/stormihoebe">By: Stormi Hoebelhenrich</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -147,8 +148,12 @@ import  {Animal} from './animal.model';
 export class AnimalListComponent{
 @Input()childAnimalList: Animal[];
 @Output()clickSender = new EventEmitter();
+@Output()addClickSender = new EventEmitter();
 editButtonHasBeenClicked(animalToEdit: Animal) {
   this.clickSender.emit(animalToEdit);
+}
+addNewButtonHasBeenClicked(addString: boolean){
+  this.addClickSender.emit(addString);
 }
 
 filterByExhibitOption: string = "All";

@@ -100,8 +100,8 @@ import  {Animal} from './animal.model';
         <div class="form-group">
           <input #newImageAlt placeholder="Image Description" class="form-control">
         </div>
-        <button class="btn btn-default" (click)="submitForm(newSpecies.value, newName.value, newDOB.value, newAgeCharacteristic.value, newDiet.value, newLocation.value, newCaregivers.value, newSex.value, newLikes.value, newDislikes.value, newImageUrl.value, newImageAlt.value);addNewAnimal=false;">Add</button>
-        <button (click)="addNewAnimal=false" class="btn btn-default">Cancel</button>
+        <button class="btn btn-default" (click)="submitForm(newSpecies.value, newName.value, newDOB.value, newAgeCharacteristic.value, newDiet.value, newLocation.value, newCaregivers.value, newSex.value, newLikes.value, newDislikes.value, newImageUrl.value, newImageAlt.value);addNewAnimal=false; finishedAdding();">Add</button>
+        <button (click)="addNewAnimal=false; finishedAdding();" class="btn btn-default">Cancel</button>
       </div>
     </div>
   `
@@ -109,8 +109,13 @@ import  {Animal} from './animal.model';
 })
 
 export class AnimalNewComponent{
+  @Input() addNewAnimal: boolean;
   @Output() newAnimalSender = new EventEmitter();
+  @Output() doneAddingSender = new EventEmitter();
 
+  finishedAdding() {
+    this.doneAddingSender.emit();
+  }
     submitForm(species: string, name: string, dob: string, ageCaracteristic: string, diet: string, location: string, caregivers: string, sex: string, likes: string, dislikes: string, imageUrl: string, imageAlt: string){
       if (imageUrl === "") {
         imageUrl = "https://image.ibb.co/mqZw85/zebra.png";
@@ -122,9 +127,6 @@ export class AnimalNewComponent{
       this.newAnimalSender.emit(newAnimalToAdd);
       console.log(species, name, dob, ageCaracteristic, diet, location, parseInt(caregivers), sex, likes, dislikes, imageUrl, imageAlt)
     }
-
-    addNewAnimal: boolean = false;
-
     newButtonClicked() {
       this.addNewAnimal = true;
     }

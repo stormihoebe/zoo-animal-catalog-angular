@@ -4,10 +4,10 @@ import { Animal } from './animal.model'
 @Component({
   selector: 'app-root',
   template: `
-  <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
+  <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)" (addClickSender)="addNewAnimal($event)"></animal-list>
   <animal-edit [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></animal-edit>
 
-  <animal-new (newAnimalSender)="addAnimal($event)"></animal-new>
+  <animal-new (newAnimalSender)="addAnimal($event)" (doneAddingSender)="finishedAdding()"[addNewAnimal]="parentAddNewAnimal"></animal-new>
   `
 })
 
@@ -19,11 +19,18 @@ export class AppComponent {
     new Animal("Flamingo", "Arnie", "02/06/1984", "Senior", "Omnivore", "Zone 1", 3, "M", "Standing in water", "Being disturbed", "https://image.ibb.co/nme2gQ/flamingo.png", "square icon with flamingo cut-out"),
   ];
   selectedAnimal = null;
+  parentAddNewAnimal = false;
+  finishedAdding(){
+    this.parentAddNewAnimal = false;
+  }
   finishedEditing() {
     this.selectedAnimal = null;
   }
   editAnimal(clickedAnimal: Animal){
     this.selectedAnimal = clickedAnimal;
+  }
+  addNewAnimal(add: boolean){
+    this.parentAddNewAnimal = add;
   }
   addAnimal(newAnimalFromChild: Animal){
     this.masterAnimalList.push(newAnimalFromChild);
