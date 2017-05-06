@@ -8,63 +8,91 @@ import  {Animal} from './animal.model';
     <div *ngIf="addNewAnimal">
       <div class="well" id="newAnimalForm">
         <h3>Add New Animal</h3>
-        <div class="form-group">
-          <input #newSpecies placeholder="Species" class="form-control">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input #newSpecies placeholder="Species" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input #newName placeholder="Name" class="form-control">
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <input #newName placeholder="Name" class="form-control">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Date of Birth:</label>
+
+                <input #newDOB type ="date" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Age Characteristic</label>
+              <select #newAgeCharacteristic  class="form-control">
+                <option value="Young">Young</option>
+                <option value="Mature" >Mature</option>
+                <option value="Senior" >Senior</option>
+                <option value="Unknown">Unknown</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Sex:</label>
+              <select #newSex  class="form-control">
+                <option value="M">Male</option>
+                <option value="F" >Female</option>
+                <option value="N/A">N/A</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-            <input #newDOB placeholder="Date of Birth" type ="date" class="form-control">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Location:</label>
+              <select #newLocation  class="form-control">
+                <option value="Zone 1">Zone 1</option>
+                <option value="Zone 2" >Zone 2</option>
+                <option value="Zone 3" >Zone 3</option>
+                <option value="Zone 4" >Zone 4</option>
+                <option value="Zone 5" >Zone 5</option>
+                <option value="Other" >Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Diet:</label>
+              <select #newDiet  class="form-control">
+                <option value="Carnivore">Carnivore</option>
+                <option value="Herbivore" >Herbivore</option>
+                <option value="Omnivore" >Omnivore</option>
+                <option value="Other" >Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Number of Caretakers:</label>
+              <input #newCaregivers class="form-control" type="number">
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Age Characteristic</label>
-          <select #newAgeCharacteristic  class="form-control">
-            <option value="Young">Young</option>
-            <option value="Mature" >Mature</option>
-            <option value="Senior" >Senior</option>
-            <option value="Unknown">Unknown</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Sex:</label>
-          <select #newSex  class="form-control">
-            <option value="M">Male</option>
-            <option value="F" >Female</option>
-            <option value="N/A">N/A</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Diet:</label>
-          <select #newDiet  class="form-control">
-            <option value="Carnivore">Carnivore</option>
-            <option value="Herbivore" >Herbivore</option>
-            <option value="Omnivore" >Omnivore</option>
-            <option value="Other" >Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Location:</label>
-          <select #newLocation  class="form-control">
-            <option value="Zone 1">Zone 1</option>
-            <option value="Zone 2" >Zone 2</option>
-            <option value="Zone 3" >Zone 3</option>
-            <option value="Zone 4" >Zone 4</option>
-            <option value="Zone 5" >Zone 5</option>
-            <option value="Other" >Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Number of Caretakers:</label>
-          <input #newCaregivers class="form-control" type="number">
-        </div>
-        <div class="form-group">
-          <label>Likes:</label>
-          <input #newLikes class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Dislikes:</label>
-          <input #newDislikes class="form-control">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input placeholder="Likes" #newLikes class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input placeholder="Dislikes" #newDislikes class="form-control">
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <input #newImageUrl placeholder="Image Url (leave blank if image does not fit standards)"class="form-control">
