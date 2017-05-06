@@ -51,9 +51,10 @@ import  {Animal} from './animal.model';
               </div>
             </form>
           </li>
+          <li (click)="addNewButtonHasBeenClicked(true)"><a>Add New Animal</a></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li (click)="addNewButtonHasBeenClicked(true)">Add New Animal</li>
           <li><a href="https://github.com/stormihoebe">By: Stormi Hoebelhenrich</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
